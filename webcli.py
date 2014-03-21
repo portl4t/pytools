@@ -11,7 +11,8 @@ if __name__=='__main__':
 
     before = time.time()
     conn = httplib.HTTPConnection("10.235.163.4:8880")
-    conn.request("GET", "/mm4.js")      # view man
+    conn.request("GET", "/mm4.js")
+#    conn.request("POST", "/cm/?action=prefetch&force=true", body=None, headers={})
 
     r1 = conn.getresponse()
     data = r1.read()
@@ -21,6 +22,8 @@ if __name__=='__main__':
     print r1.getheaders()
 
     conn.close()
+
+    print data
 
     print '~~~ finish ~~~'
 
